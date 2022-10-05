@@ -1,27 +1,70 @@
-# MyAppTest
+# ANGULAR TEST
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
 
-## Development server
+```
+ng test
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# Tools
+- Jasmine
+- Karma
 
-## Code scaffolding
+# UNIT testing
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+> TO test a single unit (class, function ...)
 
-## Build
+>  ISOLATED TESTS
+- Pipe
+- Service
+- Class
+- Component
+- Directives
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+We should <b>mock</b> our dependencies, otherwise it isn't isolation anymore.
 
-## Running unit tests
+We don't test the template with the component
+but only the logic into the ts file
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+# Integration or Functional testing
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+> <span> This is defined as more than a unit but less than a complete application test</span><br>
+So we check than whether one part of the application is working with another part.
 
-## Further help
+We create a module that we are going to test
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- WE have 2 types of integration test:
+    - <b>Shallow Test</b>
+    - <b>Deep Test</b>
+
+> <b>Shallow Test:</b><br>
+We only test a single component with his template<br>
+<b>UserComponent => UserComponentTemplate</b>
+
+> <b>Deep Test:</b><br>
+We test many components actually having child components<br>
+<b>ParentComponent => ChildComponent => UserService</b>
+
+# E2E testing
+
+> Live running application
+
+> <b>FED => BED => DB</b>
+
+<span>Tests are written to manipulate the Browser in an automated way to do things like clik buttons, type values in the forms, navigate to the page and so on ...</span>
+
+> So we can validate that the hole app it's working properly
+
+- > Drawback
+    - Speed
+    - Difficulty of writing tests
+
+> So E2E testings are tend to be less reliable than other types of automated tests(unit or integration test).
+
+# MOCKING
+
+- Dummies: we create a dummies class, service, dependencies, Object ...
+- Stubs: we create another class or Object that will that the control, the behavior
+- Spies: To spy on methods
+
+
